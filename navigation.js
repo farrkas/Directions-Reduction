@@ -14,8 +14,22 @@ function dirReduc(arr) {
 
 
     });
-    wartosci.forEach((element, i) => { if (element[i] == -element[i + 1] ) arr[i]=""; arr[i+1]="" });
-    console.log(arr);
+
+    var zmienione = [];
+    let i = 0;
+    let l = 0;
+    do {
+        if (wartosci[i] == -wartosci[i + 1]) {
+
+            i = i + 2;
+        }
+        else {
+            zmienione[l] = arr[i];
+            i++;
+            l++;
+        }
+    } while (i <= arr.lenght + 1);
+    console.log(zmienione);
 
 }
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]);
