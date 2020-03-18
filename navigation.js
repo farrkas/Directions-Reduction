@@ -11,11 +11,23 @@ function dirReduc(arr) {
         else if (element == "EAST") return (2);
         else if (element == "WEST") return (-2);
         //else {console.log("Wpisano zły kierunek!"); break;}
-
-
     });
-    wartosci.forEach((element, i) => { if (element[i] == -element[i + 1] ) arr[i]=""; arr[i+1]="" });
-    console.log(arr);
+
+    var wynik = [];
+    let l = 0;
+    wartosci.forEach((i, array) => {
+
+        if (arr[i] + array[i + 1] != 0) {
+        wynik[l] = arr[i];
+        l++;
+        i=i+2;
+        }
+
+        else if ()
+    });
+
+
+    console.log(wynik);
 
 }
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]);
