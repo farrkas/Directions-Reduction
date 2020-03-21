@@ -35,8 +35,9 @@ function dirReduc(arr) {
             //default: ;
         }
     });
-    console.log(koncowy);
+    console.log(wynik);
 }
-dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]); //"WEST"
-dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]); //"NORTH", "WEST", "SOUTH", "EAST"
-dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]); //[]
+//dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]); //"WEST"
+//dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]); //"NORTH", "WEST", "SOUTH", "EAST"
+//dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]); //[]
+dirReduc(['NORTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'SOUTH', 'WEST', 'NORTH', 'EAST', 'WEST', 'NORTH', 'SOUTH', 'EAST', 'WEST']); // 'WEST', 'NORTH',
