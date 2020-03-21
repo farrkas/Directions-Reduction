@@ -9,7 +9,7 @@ function dirReduc(arr) {
             case "SOUTH": return (-1); break;
             case "EAST": return (2); break;
             case "WEST": return (-2); break;
-            default: console.log("Wpisaleś zły kierunek!");
+            default: console.log("Wpisaleś zły kierunek!"); return 0;
         }
     });
 
@@ -17,13 +17,16 @@ function dirReduc(arr) {
         let i = 0;
         wynik = wartosci;
         while (i <= wart.length - 1) {
-            if (Math.abs(wart[i]) == Math.abs(wart[i + 1])) { wynik.splice(i, 2); i++; }
-            else i = i + 2;
+            if ((wart[i]) == (wart[i + 1])) i++;
+            else if (Math.abs(wart[i]) == Math.abs(wart[i + 1])) { wynik.splice(i, 2); i = i + 2; }
+            else i++;
         }
         //wynik = wartosci;
     }
     porownanie(wartosci);
-    porownanie(wynik);
+
+
+    for (let i = 1; i <= wynik.length; i++) { porownanie(wynik); }
 
 
     var koncowy = wartosci.map((element) => {
@@ -35,9 +38,10 @@ function dirReduc(arr) {
             //default: ;
         }
     });
-    console.log(wynik);
+    console.log(koncowy);
 }
-//dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]); //"WEST"
-//dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]); //"NORTH", "WEST", "SOUTH", "EAST"
-//dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]); //[]
-dirReduc(['NORTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'SOUTH', 'WEST', 'NORTH', 'EAST', 'WEST', 'NORTH', 'SOUTH', 'EAST', 'WEST']); // 'WEST', 'NORTH',
+dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]); //"WEST"
+dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]); //"NORTH", "WEST", "SOUTH", "EAST"
+dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]); //[]
+dirReduc(['NORTH', 'SOUTH', 'WEST', 'EAST', 'NORTH', 'SOUTH', 'SOUTH', 'WEST', 'EAST', 'WEST', 'SOUTH', 'NORTH', 'WEST', 'EAST']); // 'SOUTH', 'WEST'
+dirReduc(['WEST', 'EAST', 'SOUTH', 'NORTH', 'NORTH', 'NORTH', 'NORTH', 'WEST', 'EAST', 'SOUTH', 'NORTH']); //'NORTH', 'NORTH', 'NORTH'
